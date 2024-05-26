@@ -1,8 +1,23 @@
+from eight_queen import eight_queen
 from subsets import zero_sum
 from traveling_salesman import shortest_path
 
 
 def main():
+    print("Exercicio 1 - 8 Damas")
+    solutions = []
+    board = [
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+    ]
+    eight_queen(board, 0, solutions)
+    print(f"Numero de solucoes = {len(solutions)}")
     print("Exercicio 3 - Soma de subconjuntos")
     print(zero_sum([-2, -1, 0, 1, 2]))
     print("Exercicio 4 - Caixeiro-viajante")
@@ -20,7 +35,6 @@ def main():
     ]
     total_dist, _shortest_path = shortest_path(path)
     print(total_dist, _shortest_path)
-
 
 
 if __name__ == "__main__":

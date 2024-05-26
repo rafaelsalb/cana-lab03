@@ -46,17 +46,9 @@ def shortest_path(cities: list) -> tuple[list, float]:
 
 
 if __name__ == "__main__":
-    path = [
-        [0, 0],
-        [1, 1],
-        [1, 0],
-        [1, 5],
-        [2, 3],
-        [4, -2],
-        [-15, 3],
-        [3, 2],
-        [-2, 4],
-        [5, -2]
-    ]
+    import random
+
+    path = [[random.randrange(-50, 50), random.randrange(-50, 50)] for _ in range(10)]
+    print(f"Looking for shortest path for cities {path}")
     total_dist, path = shortest_path(path)
     print(total_dist, path)
