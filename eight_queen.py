@@ -6,11 +6,12 @@ def print_board(board):
         print(i)
 
 def is_safe(board: List, row: int, col: int) -> bool:
-    # check if row is safe
+    # checa se a linha é segura
     for i in range(col, -1, -1):
         if board[row][i]:
             return False
     
+    # checa se a diagonal esquerda-direta é segura
     i = row
     j = col
     while i >= 0 and j >= 0:
@@ -19,6 +20,7 @@ def is_safe(board: List, row: int, col: int) -> bool:
         i -= 1
         j -= 1
 
+    # checa se a diagonal direita-esquerda é segura
     i = row
     j = col
     while i < 8 and j >= 0:
